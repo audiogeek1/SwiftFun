@@ -29,6 +29,13 @@ class ViewController: UIViewController {
             
         }
         
+        if buttonCount >= 20 {
+            
+            view.backgroundColor = UIColor.yellow
+            newLabel.text = "You hit me 20x"
+            
+        }
+        
     }
     @IBOutlet weak var newLabel: UILabel!
     
