@@ -11,9 +11,27 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBAction func newButton(_ sender: Any) {
-        buttonCount = buttonCount + 1
+        let addition = additionSwitch.isOn
         
-        print(buttonCount)
+        if addition{
+            let sum = Double(topTextField.text!)! + Double(bottomTextField.text!)!
+            
+            newLabel.text = "\(topTextField.text!) + \(bottomTextField.text!) = \(sum)"
+            
+        } else {
+            let sum = Double(topTextField.text!)! - Double(bottomTextField.text!)!
+            
+            newLabel.text = "\(topTextField.text!) - \(bottomTextField.text!) = \(sum)"
+        }
+        
+        
+        
+        //buttonCount += 1
+        
+        print(topTextField.text!)
+        print(bottomTextField.text!)
+        
+      /*  print(buttonCount)
         
         if buttonCount >= 10 {
            
@@ -34,14 +52,23 @@ class ViewController: UIViewController {
             view.backgroundColor = UIColor.yellow
             newLabel.text = "You hit me 20x"
             
-        }
+        }*/
         
     }
+    
+    
     @IBOutlet weak var newLabel: UILabel!
     
-    var buttonCount = 0
+    @IBOutlet weak var topTextField: UITextField!
+    
+        var buttonCount = 0
+    
+        
+        
+    @IBOutlet weak var bottomTextField: UITextField!
     
     
+    @IBOutlet weak var additionSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
